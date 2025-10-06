@@ -1,221 +1,148 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Владислав Дюков — Frontend / Full‑stack Engineer</title>
-  <meta name="description" content="Резюме: Владислав Дюков — Senior Frontend / Full‑stack разработчик (15 лет).">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Владислав Дюков — Frontend / Full‑stack</title>
+  <meta name="description" content="Лаконичное резюме — Владислав Дюков" />
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa8bf; --accent:#7dd3fc; --glass:rgba(255,255,255,0.04);
-      --glass-2:rgba(255,255,255,0.02);
-    }
+    :root{--bg:#0b0f12;--text:#e6eef8;--muted:#94a3b8;--accent:#39d1b4}
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#071025 0%, #071827 100%); color:#e6eef8}
-    .container{max-width:1100px;margin:28px auto;padding:28px;display:grid;grid-template-columns:320px 1fr;gap:28px}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Fira Code", monospace;}
+    .wrap{max-width:900px;margin:36px auto;padding:28px;background:transparent}
 
-    /* Left column */
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent);border-radius:16px;padding:22px;backdrop-filter:blur(6px);box-shadow:0 6px 24px rgba(2,6,23,0.6)}
-    .avatar{width:100%;height:180px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#042233}
-    h1{margin:0;font-size:22px}
-    .role{color:var(--muted);margin-top:6px}
-    .contacts{margin-top:14px;font-size:14px}
+    .card{background:rgba(255,255,255,0.02);border-radius:10px;padding:28px 32px}
+    .header{display:flex;align-items:center;gap:24px}
+    .name{font-size:20px;letter-spacing:0.4px;margin:0}
+    .role{color:var(--muted);font-size:13px;margin-top:4px}
+
+    .contacts{margin-left:auto;text-align:right;font-size:13px}
     .contacts a{color:var(--accent);text-decoration:none}
-    .chip{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;font-size:13px;color:var(--muted)}
 
-    /* Skills */
-    .section{margin-top:18px}
-    .section h3{margin:0 0 10px 0;font-size:15px}
-    .skill{margin-bottom:10px}
-    .skill .label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
-    .bar{height:10px;background:var(--glass-2);border-radius:8px;overflow:hidden}
-    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa);border-radius:8px}
+    .section{margin-top:22px}
+    .section h2{margin:0;font-size:13px;color:var(--muted);letter-spacing:1px}
+    .p{margin:8px 0;color:var(--muted);font-size:14px;line-height:1.5}
 
-    /* Experience timeline */
-    .timeline{margin-top:8px;border-left:2px solid rgba(255,255,255,0.03);padding-left:18px}
-    .item{position:relative;padding:12px 0}
-    .item:before{content:'';position:absolute;left:-10px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(125,211,252,0.18)}
-    .role-title{font-weight:700}
-    .muted{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:220px 1fr;gap:20px;margin-top:12px}
 
-    /* Right column */
-    .main{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:16px;padding:26px;min-height:300px}
-    .flex{display:flex;gap:12px;align-items:center}
+    .left{padding-right:8px}
+    .right{padding-left:8px}
 
-    .controls{display:flex;gap:10px;justify-content:flex-end}
-    button.btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer}
-    button.btn.secondary{color:var(--muted)}
+    .list{margin:8px 0;padding-left:14px}
+    .list li{margin:6px 0}
 
-    .summary{margin-top:6px;color:var(--muted)}
+    .job{margin-bottom:12px}
+    .job .title{font-weight:700}
+    .job .meta{color:var(--muted);font-size:13px}
 
-    /* Projects */
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
-    .card{background:var(--card);border-radius:12px;padding:12px}
-    .card h4{margin:0 0 6px 0}
-    .tags{margin-top:8px}
-    .tag{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;margin-right:6px;font-size:12px;color:var(--muted)}
+    .projects{display:flex;flex-direction:column;gap:8px}
+    .small{font-size:13px;color:var(--muted)}
 
-    /* Print */
-    @media print{
-      body{background:white;color:black}
-      .container{max-width:800px;padding:0;grid-template-columns:1fr}
-      .panel, .main{box-shadow:none;border-radius:0}
-      .controls{display:none}
-    }
+    .controls{margin-top:18px;display:flex;gap:8px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:8px;font-family:inherit;color:var(--muted);cursor:pointer}
 
-    /* Responsive */
-    @media(max-width:880px){.container{grid-template-columns:1fr;padding:18px}.avatar{height:140px}}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.contacts{text-align:left;margin-left:0}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <aside class="panel">
-      <div class="avatar">В.Дюков — Frontend / Full‑stack</div>
-      <h1>Владислав Дюков</h1>
-      <div class="role">Frontend / Full‑stack Engineer</div>
-
-      <div class="contacts">
-        <div style="margin-top:12px">
-          <div class="chip">Telegram: <a href="https://t.me/dyukovlad" target="_blank">@dyukovlad</a></div>
-        </div>
-        <div style="margin-top:10px;font-size:14px">
-          <div class="muted">Телефон</div>
-          <div><a href="tel:+79817380301">+7 (981) 738‑0301</a> <button class="btn secondary" onclick="copyText('+7 (981) 738-0301')">Копировать</button></div>
-          <div class="muted" style="margin-top:8px">Email</div>
-          <div><a href="mailto:dyukovlad@gmail.com">dyukovlad@gmail.com</a> <button class="btn secondary" onclick="copyText('dyukovlad@gmail.com')">Копировать</button></div>
-        </div>
-
-        <div style="margin-top:12px" class="muted">GitHub / LinkedIn</div>
-        <div style="margin-top:6px"><a href="https://github.com/dyukovlad" target="_blank">github.com/dyukovlad</a> • LinkedIn</div>
-      </div>
-
-      <div class="section">
-        <h3>Навыки</h3>
-        <div class="skill">
-          <div class="label"><span>Frontend — Vue 3, React, TypeScript</span><span>95%</span></div>
-          <div class="bar"><i style="width:95%"></i></div>
-        </div>
-        <div class="skill">
-          <div class="label"><span>Backend — Node.js, NestJS</span><span>85%</span></div>
-          <div class="bar"><i style="width:85%"></i></div>
-        </div>
-        <div class="skill">
-          <div class="label"><span>DevOps — Docker, CI/CD</span><span>80%</span></div>
-          <div class="bar"><i style="width:80%"></i></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h3>Языки</h3>
-        <div class="chip">Русский — родной</div>
-        <div class="chip">English — B1 (техническая документация)</div>
-      </div>
-
-      <div class="section">
-        <h3>Образование</h3>
-        <div class="muted">Бакалавр, Информатика — КФУ, 2016</div>
-        <div class="muted" style="margin-top:6px">Техникум, Информационные системы — 2008</div>
-      </div>
-
-    </aside>
-
-    <main class="main">
-      <div class="flex" style="justify-content:space-between;align-items:center">
+  <div class="wrap">
+    <div class="card">
+      <div class="header">
         <div>
-          <div style="font-weight:700">Senior‑frontend/full‑stack разработчик — 15 лет опыта</div>
-          <div class="summary">Опыт построения микрофронтенд‑архитектур, CI/CD, руководство командами. Уверенный пользователь Linux, Docker, NestJS/Express, Vue 3, MSSQL.</div>
+          <h1 class="name">Владислав Дюков</h1>
+          <div class="role">Frontend / Full‑stack Engineer — Senior (15 лет +)</div>
         </div>
-        <div class="controls">
-          <button class="btn" onclick="window.print()">Печать / Сохранить PDF</button>
-          <button class="btn" onclick="downloadVCard()">Скачать vCard</button>
+
+        <div class="contacts">
+          <div>Telegram: <a href="https://t.me/dyukovlad" target="_blank">@dyukovlad</a></div>
+          <div style="margin-top:6px">+7 (981) 738‑0301 • <a href="mailto:dyukovlad@gmail.com">dyukovlad@gmail.com</a></div>
+          <div style="margin-top:6px" class="small">GitHub: github.com/dyukovlad</div>
         </div>
       </div>
 
-      <section class="section" style="margin-top:18px">
-        <h3>Опыт работы</h3>
-        <div class="timeline">
-          <div class="item">
-            <div class="role-title">Full‑stack разработчик (фриланс)</div>
-            <div class="muted">06/2024 – present</div>
-            <div style="margin-top:8px">Разработка SaaS‑продуктов на React + NestJS, PostgreSQL, MongoDB. CI/CD в Docker, автоматическая генерация OpenAPI‑клиентов → сокращение вывода в продакшн на 30 %.</div>
+      <div class="grid">
+        <aside class="left">
+          <div class="section">
+            <h2>Коротко обо мне</h2>
+            <div class="p">Senior‑frontend/full‑stack разработчик с опытом микрофронтендов, CI/CD и руководства командами. Уверенно работаю в Linux, Docker, NodeJS, React, MSSQL.</div>
           </div>
 
-          <div class="item">
-            <div class="role-title">Frontend Team Lead — ООО “Гаскар групп”</div>
-            <div class="muted">02/2020 – 06/2024</div>
-            <div style="margin-top:8px">Руководил командой из 8 человек, внедрил Micro‑Frontend (React, Module Federation). Проект мониторинга персонала (exon‑smart.com) – 120 k активных пользователей. Внедрил Jest + Cypress, покрытие критичных модулей 85 %.</div>
+          <div class="section">
+            <h2>Навыки</h2>
+            <ul class="list">
+              <li>Frontend: React, Vue 3 (Composition), TypeScript, MUI</li>
+              <li>Backend: Node.js, NestJS, Express, GraphQL</li>
+              <li>БД: MSSQL, PostgreSQL, MongoDB, Redis</li>
+              <li>DevOps: Docker, Linux, Git, CI/CD</li>
+              <li>Тесты: Jest, Cypress</li>
+            </ul>
           </div>
 
-          <div class="item">
-            <div class="role-title">Frontend разработчик — Сейлтекс</div>
-            <div class="muted">08/2014 – 08/2019</div>
-            <div style="margin-top:8px">Верстал адаптивные UI, миграция части проектов на Vue 3. Настройка сборки (Webpack, Gulp), CI (GitLab).</div>
+          <div class="section">
+            <h2>Языки</h2>
+            <div class="p">Русский — родной<br/>English — B1 (техническая документация)</div>
           </div>
-        </div>
-      </section>
 
-      <section class="section">
-        <h3>Ключевые проекты</h3>
-        <div class="projects">
-          <div class="card">
-            <h4>SaaS‑платформа мониторинга</h4>
-            <div class="muted">React + NestJS, PostgreSQL — 120 k пользователей, SLA 99,9 %</div>
-            <div class="tags">
-              <span class="tag">React</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span>
+          <div class="section">
+            <h2>Образование</h2>
+            <div class="small">Бакалавр, Информатика — КФУ, 2016<br/>Техникум, Информационные системы — 2008</div>
+          </div>
+        </aside>
+
+        <main class="right">
+          <div class="section">
+            <h2>Опыт работы</h2>
+            <div class="job">
+              <div class="title">Full‑stack (фриланс)</div>
+              <div class="meta">06/2024 — present</div>
+              <div class="p">Разработка SaaS на React + NestJS. CI/CD в Docker.</div>
+            </div>
+
+            <div class="job">
+              <div class="title">Frontend Team Lead — ООО «Гаскар групп»</div>
+              <div class="meta">02/2020 — 06/2024</div>
+              <div class="p">Руководство командой 8 чел., внедрение Micro‑Frontend (Module Federation).</div>
+            </div>
+
+            <div class="job">
+              <div class="title">Frontend разработчик — Сейлтекс</div>
+              <div class="meta">08/2014 — 08/2019</div>
+              <div class="p">Адаптивный UI, миграции на React, настройка сборки и CI.</div>
             </div>
           </div>
 
-          <div class="card">
-            <h4>Micro‑Frontend architecture for exon1.ru</h4>
-            <div class="muted">Module Federation, React + TS — сокращение времени сборки 35 %</div>
-            <div class="tags"><span class="tag">Module Federation</span><span class="tag">Micro‑Frontend</span></div>
+          <div class="section">
+            <h2>Ключевые проекты</h2>
+            <div class="projects">
+              <div><strong>SaaS‑платформа мониторинга</strong> — React + NestJS</div>
+              <div><strong>Micro‑Frontend (exon1.ru)</strong> — Module Federation, сокращение времени сборки 35%</div>
+              <div><strong>E‑commerce storefront</strong> — React + Node, LCP &lt; 1s</div>
+            </div>
           </div>
 
-          <div class="card">
-            <h4>E‑commerce storefront</h4>
-            <div class="muted">Vue 3 + Node, MSSQL — Core Web Vitals LCP &lt; 1s</div>
-            <div class="tags"><span class="tag">Vue 3</span><span class="tag">MSSQL</span></div>
+          <div class="controls">
+            <button class="btn" onclick="window.print()">Печать / PDF</button>
+            <button class="btn" onclick="downloadVCard()">Скачать vCard</button>
+            <button class="btn" onclick="copyText('+7 (981) 738-0301')">Копировать телефон</button>
           </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3>Технические навыки и инструменты</h3>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px">
-          <div class="card"><strong>Frontend</strong><div class="muted" style="margin-top:6px">Vue 3 (Composition API, Pinia), React, Redux, TypeScript, JS ES6+, MUI</div></div>
-          <div class="card"><strong>Backend</strong><div class="muted" style="margin-top:6px">Node.js, NestJS, Express, Fastify, REST, GraphQL</div></div>
-          <div class="card"><strong>БД</strong><div class="muted" style="margin-top:6px">MSSQL, PostgreSQL, MongoDB, MySQL, Redis</div></div>
-          <div class="card"><strong>DevOps & Тесты</strong><div class="muted" style="margin-top:6px">Docker, Linux, Git, CI/CD (GitLab, GH Actions), Jest, Cypress</div></div>
-        </div>
-      </section>
-
-      <section class="section" style="margin-top:18px;display:flex;gap:12px;align-items:center;justify-content:space-between">
-        <div class="muted">Готов к релокации / удалённой работе. Готов делиться знаниями и наставничеством.</div>
-        <div>
-          <button class="btn" onclick="toggleTheme()">Тёмная/Светлая тема</button>
-        </div>
-      </section>
-
-    </main>
+        </main>
+      </div>
+    </div>
   </div>
 
   <script>
     function copyText(text){navigator.clipboard.writeText(text).then(()=>alert('Скопировано: '+text))}
-
     function downloadVCard(){
-      const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:Дюков;Владислав\nFN:Владислав Дюков\nTEL;TYPE=VOICE:+7 981 738 0301\nEMAIL:dyukovlad@gmail.com\nEND:VCARD`;
+      const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Дюков;Владислав
+FN:Владислав Дюков
+TEL;TYPE=VOICE:+7 981 738 0301
+EMAIL:dyukovlad@gmail.com
+END:VCARD`;
       const blob = new Blob([vcard],{type:'text/vcard'});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download = 'vladislav_dyukov.vcf'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    }
-
-    function toggleTheme(){
-      if(document.documentElement.style.getPropertyValue('--bg') !== ''){
-        document.body.style.background = document.body.style.background === 'white' ? 'linear-gradient(180deg,#071025 0%, #071827 100%)' : 'white';
-        document.documentElement.style.color = document.documentElement.style.color === 'black' ? '#e6eef8' : 'black';
-      } else {
-        document.body.style.background = 'linear-gradient(180deg,#071025 0%, #071827 100%)';
-      }
     }
   </script>
 </body>
