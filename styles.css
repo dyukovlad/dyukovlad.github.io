@@ -1,0 +1,169 @@
+/* ===== Токены ===== */
+:root {
+  --bg: #0b0f14;
+  --surface: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8eef7;
+  --muted: #8b97a8;
+  --accent: #3ddbb4;
+  --accent-dim: rgba(61, 219, 180, 0.12);
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.mono { font-family: var(--mono); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== Hero ===== */
+.hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; }
+#bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-inner { position: relative; padding: 96px 0 64px; }
+.hero-hello { color: var(--accent); font-size: 15px; margin: 0 0 12px; }
+.hero-name { font-size: clamp(44px, 9vw, 88px); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 18px; }
+.hero-role { font-size: clamp(16px, 2.6vw, 22px); color: var(--muted); margin: 0 0 20px; min-height: 1.6em; }
+#typed { color: var(--text); }
+.cursor { color: var(--accent); animation: blink 1.06s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.hero-lead { max-width: 560px; color: var(--muted); margin: 0 0 28px; }
+
+/* ===== Чипы контактов ===== */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; padding: 0; list-style: none; }
+.chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 13px; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px;
+  background: var(--surface); transition: border-color 0.2s, color 0.2s;
+}
+a.chip:hover, .chip-btn:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+.chip-btn { cursor: pointer; }
+
+/* ===== Кнопки ===== */
+.actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 14px; padding: 12px 22px;
+  border-radius: 10px; border: 1px solid var(--accent); cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+}
+.btn-primary { background: var(--accent); color: #06251c; font-weight: 700; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61, 219, 180, 0.25); text-decoration: none; }
+.btn-ghost { background: transparent; color: var(--accent); }
+.btn-ghost:hover { background: var(--accent-dim); transform: translateY(-2px); }
+
+/* ===== Секции ===== */
+.section { padding: 72px 0; border-top: 1px solid var(--border); }
+.section-title { font-size: 15px; color: var(--accent); letter-spacing: 0.08em; margin: 0 0 32px; }
+.about-text { max-width: 720px; font-size: 18px; margin: 0; }
+
+/* ===== Метрики ===== */
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.metric { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 18px; text-align: center; }
+.metric-num { display: block; font-family: var(--mono); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--accent); }
+.metric-label { font-size: 13px; color: var(--muted); }
+
+/* ===== Таймлайн ===== */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px;
+  background: linear-gradient(var(--accent), transparent); opacity: 0.35;
+}
+.job { position: relative; padding-bottom: 44px; }
+.job:last-child { padding-bottom: 0; }
+.job::before {
+  content: ""; position: absolute; left: -32px; top: 8px;
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 2px solid var(--accent); background: var(--bg);
+}
+.job-title { font-size: 20px; margin: 0 0 4px; }
+.job-company { color: var(--accent); font-weight: 400; }
+.job-meta { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.job-list { margin: 0; padding: 0; list-style: none; color: var(--muted); }
+.job-list li { position: relative; padding-left: 20px; margin: 8px 0; }
+.job-list li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
+
+/* ===== Навыки ===== */
+.skill-group { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px dashed var(--border); }
+.skill-group:last-of-type { border-bottom: none; }
+.skill-name { font-family: var(--mono); font-size: 13px; color: var(--muted); padding-top: 6px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.tag {
+  font-family: var(--mono); font-size: 13px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 5px 12px; border-radius: 7px; transition: border-color 0.2s, color 0.2s;
+}
+.tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ===== Проекты ===== */
+.projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.project {
+  display: block; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px; color: var(--text);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.project:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35); text-decoration: none; }
+.project-name { font-family: var(--mono); font-size: 16px; color: var(--accent); margin: 0 0 8px; }
+.project-desc { color: var(--muted); font-size: 14.5px; margin: 0 0 16px; }
+.project-foot { display: flex; gap: 16px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); margin: 0; }
+.lang-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #3178c6; margin-right: 6px; }
+
+/* ===== Образование ===== */
+.edu { display: grid; gap: 14px; max-width: 720px; }
+.edu-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; }
+.edu-title { margin: 0 0 4px; font-size: 16px; }
+.edu-meta { font-family: var(--mono); font-size: 13px; color: var(--muted); margin: 0; }
+.langs { margin: 22px 0 0; color: var(--muted); font-family: var(--mono); font-size: 14px; }
+
+/* ===== Футер ===== */
+.footer { border-top: 1px solid var(--border); padding: 48px 0 40px; text-align: center; color: var(--muted); font-size: 14px; }
+.footer .chips { justify-content: center; margin-bottom: 20px; }
+.footer-note { font-size: 12.5px; margin-top: 10px; }
+
+/* ===== Появление при скролле (только с JS) ===== */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+
+/* ===== Мобильная адаптация ===== */
+@media (max-width: 760px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .projects { grid-template-columns: 1fr; }
+  .skill-group { grid-template-columns: 1fr; gap: 8px; }
+  .skill-name { padding-top: 0; }
+  .section { padding: 56px 0; }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .cursor { animation: none; }
+  .btn, .project, .tag, .chip { transition: none; }
+}
+
+/* ===== Печать ===== */
+@media print {
+  :root {
+    --bg: #fff; --text: #111; --muted: #444; --accent: #0a7f65;
+    --surface: #fff; --border: #ddd; --accent-dim: transparent;
+  }
+  body { background: #fff; }
+  #bg, .actions, .chip-btn, .cursor, .footer-note { display: none !important; }
+  .hero { min-height: auto; }
+  .hero-inner { padding: 24px 0; }
+  .section { padding: 24px 0; page-break-inside: avoid; }
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+  .project:hover, .btn-primary:hover { transform: none; box-shadow: none; }
+  a { color: #0a7f65; }
+}
