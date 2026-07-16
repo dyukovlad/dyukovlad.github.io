@@ -2,148 +2,192 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Владислав Дюков — Frontend / Full‑stack</title>
-  <meta name="description" content="Лаконичное резюме — Владислав Дюков" />
-  <style>
-    :root{--bg:#0b0f12;--text:#e6eef8;--muted:#94a3b8;--accent:#39d1b4}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Fira Code", monospace;}
-    .wrap{max-width:900px;margin:36px auto;padding:28px;background:transparent}
-
-    .card{background:rgba(255,255,255,0.02);border-radius:10px;padding:28px 32px}
-    .header{display:flex;align-items:center;gap:24px}
-    .name{font-size:20px;letter-spacing:0.4px;margin:0}
-    .role{color:var(--muted);font-size:13px;margin-top:4px}
-
-    .contacts{margin-left:auto;text-align:right;font-size:13px}
-    .contacts a{color:var(--accent);text-decoration:none}
-
-    .section{margin-top:22px}
-    .section h2{margin:0;font-size:13px;color:var(--muted);letter-spacing:1px}
-    .p{margin:8px 0;color:var(--muted);font-size:14px;line-height:1.5}
-
-    .grid{display:grid;grid-template-columns:220px 1fr;gap:20px;margin-top:12px}
-
-    .left{padding-right:8px}
-    .right{padding-left:8px}
-
-    .list{margin:8px 0;padding-left:14px}
-    .list li{margin:6px 0}
-
-    .job{margin-bottom:12px}
-    .job .title{font-weight:700}
-    .job .meta{color:var(--muted);font-size:13px}
-
-    .projects{display:flex;flex-direction:column;gap:8px}
-    .small{font-size:13px;color:var(--muted)}
-
-    .controls{margin-top:18px;display:flex;gap:8px}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:8px;font-family:inherit;color:var(--muted);cursor:pointer}
-
-    @media(max-width:760px){.grid{grid-template-columns:1fr}.contacts{text-align:left;margin-left:0}}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Владислав Дюков — Senior Frontend Developer</title>
+  <meta name="description" content="Senior Frontend Developer / Frontend Team Lead с 11+ годами опыта. React, TypeScript, Next.js, микрофронтенды. Санкт-Петербург." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Владислав Дюков — Senior Frontend Developer" />
+  <meta property="og:description" content="11+ лет опыта: SaaS-платформы, микрофронтенды, команды до 10 разработчиков. React, TypeScript, Next.js." />
+  <meta property="og:url" content="https://dyukovlad.github.io/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b0f14'/><text x='50' y='70' font-size='52' text-anchor='middle' fill='%233ddbb4' font-family='monospace'>&#10095;_</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="header">
-        <div>
-          <h1 class="name">Владислав Дюков</h1>
-          <div class="role">Frontend / Full‑stack Engineer — Senior (15 лет +)</div>
-        </div>
 
-        <div class="contacts">
-          <div>Telegram: <a href="https://t.me/dyukovlad" target="_blank">@dyukovlad</a></div>
-          <div style="margin-top:6px">+7 (981) 738‑0301 • <a href="mailto:dyukovlad@gmail.com">dyukovlad@gmail.com</a></div>
-          <div style="margin-top:6px" class="small">GitHub: github.com/dyukovlad</div>
-        </div>
-      </div>
-
-      <div class="grid">
-        <aside class="left">
-          <div class="section">
-            <h2>Коротко обо мне</h2>
-            <div class="p">Senior‑frontend/full‑stack разработчик с опытом микрофронтендов, CI/CD и руководства командами. Уверенно работаю в Linux, Docker, NodeJS, React, MSSQL.</div>
-          </div>
-
-          <div class="section">
-            <h2>Навыки</h2>
-            <ul class="list">
-              <li>Frontend: React, Vue 3 (Composition), TypeScript, MUI</li>
-              <li>Backend: Node.js, NestJS, Express, GraphQL</li>
-              <li>БД: MSSQL, PostgreSQL, MongoDB, Redis</li>
-              <li>DevOps: Docker, Linux, Git, CI/CD</li>
-              <li>Тесты: Jest, Cypress</li>
-            </ul>
-          </div>
-
-          <div class="section">
-            <h2>Языки</h2>
-            <div class="p">Русский — родной<br/>English — B1 (техническая документация)</div>
-          </div>
-
-          <div class="section">
-            <h2>Образование</h2>
-            <div class="small">Бакалавр, Информатика — КФУ, 2016<br/>Техникум, Информационные системы — 2008</div>
-          </div>
-        </aside>
-
-        <main class="right">
-          <div class="section">
-            <h2>Опыт работы</h2>
-            <div class="job">
-              <div class="title">Full‑stack (фриланс)</div>
-              <div class="meta">06/2024 — present</div>
-              <div class="p">Разработка SaaS на React + NestJS. CI/CD в Docker.</div>
-            </div>
-
-            <div class="job">
-              <div class="title">Frontend Team Lead — ООО «Гаскар групп»</div>
-              <div class="meta">02/2020 — 06/2024</div>
-              <div class="p">Руководство командой 8 чел., внедрение Micro‑Frontend (Module Federation).</div>
-            </div>
-
-            <div class="job">
-              <div class="title">Frontend разработчик — Сейлтекс</div>
-              <div class="meta">08/2014 — 08/2019</div>
-              <div class="p">Адаптивный UI, миграции на React, настройка сборки и CI.</div>
-            </div>
-          </div>
-
-          <div class="section">
-            <h2>Ключевые проекты</h2>
-            <div class="projects">
-              <div><strong>SaaS‑платформа мониторинга</strong> — React + NestJS</div>
-              <div><strong>Micro‑Frontend (exon1.ru)</strong> — Module Federation, сокращение времени сборки 35%</div>
-              <div><strong>E‑commerce storefront</strong> — React + Node, LCP &lt; 1s</div>
-            </div>
-          </div>
-
-          <div class="controls">
-            <button class="btn" onclick="window.print()">Печать / PDF</button>
-            <button class="btn" onclick="downloadVCard()">Скачать vCard</button>
-            <button class="btn" onclick="copyText('+7 (981) 738-0301')">Копировать телефон</button>
-          </div>
-        </main>
-      </div>
+<header class="hero">
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="container hero-inner">
+    <p class="hero-hello mono">// привет, я</p>
+    <h1 class="hero-name">Владислав<br />Дюков</h1>
+    <p class="hero-role mono"><span id="typed">Senior Frontend Developer</span><span class="cursor" aria-hidden="true">▌</span></p>
+    <p class="hero-lead">11+ лет делаю сложные веб-приложения быстрыми и понятными: SaaS-платформы, микрофронтенды, команды до 10 разработчиков. Санкт-Петербург.</p>
+    <ul class="chips">
+      <li><a class="chip" href="https://t.me/dyukovlad" target="_blank" rel="noopener">tg: @dyukovlad</a></li>
+      <li><a class="chip" href="https://github.com/dyukovlad" target="_blank" rel="noopener">github.com/dyukovlad</a></li>
+      <li><a class="chip" href="mailto:dyukovlad@gmail.com">dyukovlad@gmail.com</a></li>
+      <li><a class="chip" href="tel:+79817380301">+7 (981) 738-03-01</a></li>
+      <li><button class="chip chip-btn" id="copy-phone" type="button">⧉ копировать номер</button></li>
+      <li><a class="chip" href="https://set.ki/bfeQ5ZS" target="_blank" rel="noopener">setka</a></li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn-primary" href="resume.pdf" download="Дюков Владислав — Frontend Developer.pdf">↓ Скачать резюме (PDF)</a>
+      <button class="btn btn-ghost" id="vcard" type="button">+ Сохранить контакт (vCard)</button>
     </div>
   </div>
+</header>
 
-  <script>
-    function copyText(text){navigator.clipboard.writeText(text).then(()=>alert('Скопировано: '+text))}
-    function downloadVCard(){
-      const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:Дюков;Владислав
-FN:Владислав Дюков
-TEL;TYPE=VOICE:+7 981 738 0301
-EMAIL:dyukovlad@gmail.com
-END:VCARD`;
-      const blob = new Blob([vcard],{type:'text/vcard'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'vladislav_dyukov.vcf'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    }
-  </script>
+<main>
+  <section id="about" class="section reveal">
+    <div class="container">
+      <h2 class="section-title mono">// обо мне</h2>
+      <p class="about-text">Senior Frontend Developer / Frontend Team Lead с 11+ годами опыта разработки высоконагруженных веб-приложений, SaaS-платформ и корпоративных информационных систем. Эксперт в React, TypeScript, Next.js и архитектуре frontend-приложений. Управлял командами до 10 разработчиков, внедрял Micro Frontend архитектуру, автоматизировал процессы разработки и выводил продукты с нуля до production.</p>
+    </div>
+  </section>
+
+  <section class="section reveal" aria-label="Ключевые метрики">
+    <div class="container">
+      <div class="metrics">
+        <div class="metric"><span class="metric-num" data-count="11" data-suffix="+">11+</span><span class="metric-label">лет опыта</span></div>
+        <div class="metric"><span class="metric-num" data-count="10" data-prefix="до ">до 10</span><span class="metric-label">человек в команде</span></div>
+        <div class="metric"><span class="metric-num" data-count="80" data-prefix="+" data-suffix="%">+80%</span><span class="metric-label">к скорости релизов</span></div>
+        <div class="metric"><span class="metric-num" data-count="60" data-suffix="+">60+</span><span class="metric-label">проектов</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section reveal">
+    <div class="container">
+      <h2 class="section-title mono">// опыт работы</h2>
+      <div class="timeline">
+        <article class="job">
+          <h3 class="job-title">Frontend-разработчик</h3>
+          <p class="job-meta mono">июнь 2024 — настоящее время</p>
+          <ul class="job-list">
+            <li>Платформа кибербезопасности на React, Next.js и TypeScript: международная локализация, защищённая маршрутизация, автогенерация API-клиента через OpenAPI.</li>
+            <li>Аналитическая платформа геоданных: интерактивные карты, тепловые зоны и визуализация на Leaflet, D3.js и Three.js.</li>
+            <li>B2B-платформа управления оборудованием и заказами на React, Redux Toolkit и TypeScript.</li>
+            <li>Система электронного документооборота с OCR, AI-ассистентом и версионностью документов для нефтегазовой компании.</li>
+            <li>Система мониторинга аномалий с интерактивными дашбордами и данными в реальном времени.</li>
+            <li>Внедрил архитектуру Feature-Sliced Design — выше масштабируемость и поддерживаемость кода.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3 class="job-title">Frontend Team Lead / Senior Frontend Developer <span class="job-company">— ООО «Гаскар групп»</span></h3>
+          <p class="job-meta mono">февраль 2020 — июнь 2024 · Москва</p>
+          <ul class="job-list">
+            <li>Руководил командой из 10 разработчиков: платформа мониторинга персонала на базе смарт-часов.</li>
+            <li>Спроектировал frontend-архитектуру на React, TypeScript, TanStack Query и Material UI.</li>
+            <li>Внедрил Micro Frontend на Module Federation — выпуск новых функций ускорился на 80%.</li>
+            <li>Разработал корпоративный UI Kit: 40+ переиспользуемых компонентов в Storybook.</li>
+            <li>Автоматизировал интеграцию API через OpenAPI Generator — время разработки сократилось на 40%.</li>
+            <li>Выстроил автоматизированное тестирование: 60% unit- и 40% интеграционного покрытия.</li>
+            <li>Разработал модуль электронной подписи (ЭЦП) и интегрировал PDFTron для цифровых документов.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3 class="job-title">Frontend-разработчик</h3>
+          <p class="job-meta mono">август 2019 — февраль 2020 · Казань</p>
+          <ul class="job-list">
+            <li>Разработал систему онлайн-оплаты для транспортного портала города Казань.</li>
+            <li>Сократил количество повторных рендеров React-компонентов на 25%.</li>
+            <li>Интегрировал современные React-модули в legacy-систему на Twig.</li>
+            <li>Создал UI Kit на базе Material UI и Storybook.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3 class="job-title">Frontend-разработчик <span class="job-company">— Сейлтекс</span></h3>
+          <p class="job-meta mono">август 2014 — август 2019 · Санкт-Петербург</p>
+          <ul class="job-list">
+            <li>Разработал 60+ коммерческих проектов: корпоративные порталы, интернет-магазины, SaaS-приложения.</li>
+            <li>Внедрял решения на React, Vue.js, Laravel, Django и WordPress.</li>
+            <li>Автоматизировал сборку и деплой с использованием Webpack, Gulp и Bash.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <div class="container">
+      <h2 class="section-title mono">// навыки</h2>
+      <div class="skill-group">
+        <span class="skill-name">frontend</span>
+        <ul class="tags"><li class="tag">React</li><li class="tag">Vue 3</li><li class="tag">TypeScript</li><li class="tag">Next.js</li><li class="tag">HTML5</li><li class="tag">CSS3</li><li class="tag">ES6+</li><li class="tag">SSR</li></ul>
+      </div>
+      <div class="skill-group">
+        <span class="skill-name">state &amp; data</span>
+        <ul class="tags"><li class="tag">Redux</li><li class="tag">TanStack Query</li><li class="tag">GraphQL</li><li class="tag">REST API</li><li class="tag">WebSockets</li></ul>
+      </div>
+      <div class="skill-group">
+        <span class="skill-name">backend &amp; db</span>
+        <ul class="tags"><li class="tag">Node.js</li><li class="tag">Bun</li><li class="tag">Python</li><li class="tag">PostgreSQL</li><li class="tag">MongoDB</li><li class="tag">SQL</li></ul>
+      </div>
+      <div class="skill-group">
+        <span class="skill-name">tooling &amp; devops</span>
+        <ul class="tags"><li class="tag">Docker</li><li class="tag">Git</li><li class="tag">Bash</li><li class="tag">Webpack</li><li class="tag">CI/CD</li><li class="tag">Material Design</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section reveal">
+    <div class="container">
+      <h2 class="section-title mono">// проекты на github</h2>
+      <div class="projects">
+        <a class="project" href="https://github.com/dyukovlad/atomx" target="_blank" rel="noopener">
+          <h3 class="project-name">/atomx</h3>
+          <p class="project-desc">Быстрый реактивный state-менеджер без привязки к фреймворку.</p>
+          <p class="project-foot"><span><span class="lang-dot" aria-hidden="true"></span>TypeScript</span><span class="stars" data-repo="dyukovlad/atomx"></span></p>
+        </a>
+        <a class="project" href="https://github.com/dyukovlad/the-last-of-guss" target="_blank" rel="noopener">
+          <h3 class="project-name">/the-last-of-guss</h3>
+          <p class="project-desc">Браузерная мультиплеерная игра-кликер с раундами и таблицей лидеров.</p>
+          <p class="project-foot"><span><span class="lang-dot" aria-hidden="true"></span>TypeScript</span><span class="stars" data-repo="dyukovlad/the-last-of-guss"></span></p>
+        </a>
+        <a class="project" href="https://github.com/dyukovlad/spirit-nexus" target="_blank" rel="noopener">
+          <h3 class="project-name">/spirit-nexus</h3>
+          <p class="project-desc">Веб-приложение на Next.js (App Router) и TypeScript.</p>
+          <p class="project-foot"><span><span class="lang-dot" aria-hidden="true"></span>TypeScript</span><span class="stars" data-repo="dyukovlad/spirit-nexus"></span></p>
+        </a>
+        <a class="project" href="https://github.com/dyukovlad/trading-lab-starter" target="_blank" rel="noopener">
+          <h3 class="project-name">/trading-lab-starter</h3>
+          <p class="project-desc">Стартер торговой лаборатории на TypeScript и Vite.</p>
+          <p class="project-foot"><span><span class="lang-dot" aria-hidden="true"></span>TypeScript</span><span class="stars" data-repo="dyukovlad/trading-lab-starter"></span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section reveal">
+    <div class="container">
+      <h2 class="section-title mono">// образование</h2>
+      <div class="edu">
+        <div class="edu-item">
+          <h3 class="edu-title">Казанский (Приволжский) федеральный университет</h3>
+          <p class="edu-meta mono">бакалавр · Институт вычислительной математики и ИТ · 2016</p>
+        </div>
+        <div class="edu-item">
+          <h3 class="edu-title">Бугульминский машиностроительный техникум</h3>
+          <p class="edu-meta mono">информационные технологии · 2008</p>
+        </div>
+      </div>
+      <p class="langs">русский — родной · английский — B1</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <ul class="chips">
+      <li><a class="chip" href="https://t.me/dyukovlad" target="_blank" rel="noopener">tg: @dyukovlad</a></li>
+      <li><a class="chip" href="mailto:dyukovlad@gmail.com">dyukovlad@gmail.com</a></li>
+      <li><a class="chip" href="https://github.com/dyukovlad" target="_blank" rel="noopener">github.com/dyukovlad</a></li>
+    </ul>
+    <p>© 2026 Владислав Дюков</p>
+    <p class="footer-note mono">чистый HTML/CSS/JS, без фреймворков · <a href="https://github.com/dyukovlad/dyukovlad.github.io" target="_blank" rel="noopener">исходники</a></p>
+  </div>
+</footer>
+
 </body>
 </html>
